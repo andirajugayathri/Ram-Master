@@ -39,6 +39,7 @@
         }
 
         .program-card {
+            text-align: center;
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -58,7 +59,7 @@
 
         .program-image img {
             width: 100%;
-            height: 150%;
+            height: 140%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -67,71 +68,6 @@
             transform: scale(1.1);
         }
 
-        /* Events Section */
-        .events-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa, var(--light-blue));
-        }
-
-        .event-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            border-left: 5px solid var(--gold);
-        }
-
-        .event-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 80px 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            height: 300px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
 
         .cta-button {
             background-color: var(--gold);
@@ -208,13 +144,16 @@
             padding: 3rem 0;
         }
 
-        .social-icon {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
+        .social-icon1 {
+            color:red;
+            font-size: 50px;
         }
-
+        .social-icon2 {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 50px;
+        }
         .social-icon:hover {
             color: var(--gold);
         }
@@ -301,37 +240,6 @@
         </div>
     </section>
 
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Our Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/300" alt="Meditation Session">
-                    <div class="gallery-caption">
-                        <h5>Morning Meditation</h5>
-                        <p>Daily group meditation sessions</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/300" alt="Yoga Class">
-                    <div class="gallery-caption">
-                        <h5>Spiritual Yoga</h5>
-                        <p>Connecting mind, body, and soul</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/300" alt="Retreat">
-                    <div class="gallery-caption">
-                        <h5>Nature Retreat</h5>
-                        <p>Finding peace in nature</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
@@ -339,7 +247,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <h4>Early Life</h4>
-                    <p>Born with a natural inclination towards spirituality and science, Ramu Master showed exceptional curiosity about life's deeper meanings from an early age.</p>
+                    <p>Born on July 26, 1980, Ramu Master is a distinguished Spiritual Science Teacher and the Founder of Dhyana Osmania Foundation and Dhyana Dharma Ashram.</p>
                 </div>
                 <div class="timeline-item">
                     <h4>Academic Excellence</h4>
@@ -427,8 +335,8 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h4>Connect with Ramu Master</h4>
                     <div class="social-links mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/c/NLIGHTTV" class="social-icon1" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ramumaster" class="social-icon2" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
