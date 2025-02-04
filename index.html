@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramu Master - Discover Inner Peace</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a365d;
+            --light-blue: #e3f2fd;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/api/placeholder/1920/1080') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        /* Programs Section */
+        .programs-section {
+            padding: 80px 0;
+            background-color: var(--cream);
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa, var(--light-blue));
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--gold);
+        }
+
+        .event-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .cta-button {
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: #c4a137;
+            color: white;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        .teaching-card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background-color: var(--light-blue);
+        }
+
+        .teaching-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-left: 3px solid var(--gold);
+            margin-left: 1rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--gold);
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Ramu Master</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#teachings">Teachings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#community">Community</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 mb-4">Discover Inner Peace with Ramu Master</h1>
+            <p class="lead mb-4">Embark on a transformative journey of self-discovery and spiritual growth</p>
+            <a href="#community" class="cta-button btn">Join the Journey</a>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs-section">
+        <div class="container">
+            <h2 class="section-title">Our Programs</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="image3.png" alt="Meditation Program">
+                        </div>
+                        <div class="card-body">
+                            <h4>Meditation Mastery</h4>
+                            <p>Learn advanced meditation techniques for deep inner peace.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="image4.png" alt="Yoga Program">
+                        </div>
+                        <div class="card-body">
+                            <h4>Spiritual Yoga</h4>
+                            <p>Connect body and soul through spiritual yoga practices.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="image5.png" alt="Mindfulness Program">
+                        </div>
+                        <div class="card-body">
+                            <h4>Mindfulness Journey</h4>
+                            <p>Discover the power of mindful living in daily life.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Meditation Session">
+                    <div class="gallery-caption">
+                        <h5>Morning Meditation</h5>
+                        <p>Daily group meditation sessions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Yoga Class">
+                    <div class="gallery-caption">
+                        <h5>Spiritual Yoga</h5>
+                        <p>Connecting mind, body, and soul</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Retreat">
+                    <div class="gallery-caption">
+                        <h5>Nature Retreat</h5>
+                        <p>Finding peace in nature</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">About Ramu Master</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Early Life</h4>
+                    <p>Born with a natural inclination towards spirituality and science, Ramu Master showed exceptional curiosity about life's deeper meanings from an early age.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Academic Excellence</h4>
+                    <p>Achieved M.Sc. in Mathematics and Physics, combining scientific reasoning with spiritual wisdom.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Spiritual Awakening</h4>
+                    <p>Embarked on a profound spiritual journey, studying ancient wisdom and modern consciousness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachings Section -->
+    <section id="teachings" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Teachings & Philosophy</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="teaching-card card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                            <h4>Mind Programming</h4>
+                            <p>"Your mind is your greatest tool for transformation."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="teaching-card card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
+                            <h4>Emotional Fitness</h4>
+                            <p>"Balance in emotions leads to harmony in life."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="teaching-card card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-eye fa-3x mb-3 text-primary"></i>
+                            <h4>Creative Visualization</h4>
+                            <p>"What you visualize, you materialize."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="teaching-card card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-magnet fa-3x mb-3 text-primary"></i>
+                            <h4>Law of Attraction</h4>
+                            <p>"Your thoughts shape your reality."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Join Our Community</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Dhyana Dharma Ashram</h3>
+                    <p>Experience transformation through our programs:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-meditation me-2"></i> Daily Meditation Sessions</li>
+                        <li class="mb-3"><i class="fas fa-om me-2"></i> Weekend Retreats</li>
+                        <li class="mb-3"><i class="fas fa-book-reader me-2"></i> Spiritual Workshops</li>
+                    </ul>
+                    <button class="cta-button btn mt-3">Register Now</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="image1.png" alt="Ashram" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h4>Connect with Ramu Master</h4>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn cta-button" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
