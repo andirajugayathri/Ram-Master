@@ -3,9 +3,8 @@
     --light-blue: #e3f2fd;
     --gold: #d4af37;
 }
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-family: "Cinzel", serif;
 }
 
 .navbar {
@@ -214,4 +213,12 @@ footer::before {
 
 .social-links a:hover {
     transform: translateY(-3px);
+}
+
+/* Success Message*/
+#successMessage {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
 }
